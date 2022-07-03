@@ -7,12 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class Task1Test {
 
     @Test
-    void main() {
-        String Actual = "h1b2";
+    void methodtest() {
         Task1 task1 = new Task1();
-        task1.Methodtest(Actual);
-        int Expected = 3;
-        assertEquals(Expected, Actual);
-
+        String input = "h0b2";
+        int expected = 2;
+        int actual = task1.Methodtest(input);
+        assertEquals(expected, actual);
     }
-}
+    }

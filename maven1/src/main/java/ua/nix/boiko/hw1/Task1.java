@@ -11,9 +11,9 @@ public class Task1 {
         task1.Methodtest(inputStr);
     }
 
-    public void Methodtest(String inputStr) {
+    public int Methodtest(String inputStr) {
         int[] Array = new int[10];
-        int count;
+        int count = 0;
         int finalResult = 0;
 
         for(int i = 0; i < inputStr.length(); ++i) {
@@ -25,5 +25,6 @@ public class Task1 {
         }
 
         System.out.println(finalResult);
+        return count;
     }
 }

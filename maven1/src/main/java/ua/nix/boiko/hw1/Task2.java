@@ -1,7 +1,6 @@
 package ua.nix.boiko.hw1;
 
 import java.util.Scanner;
-import java.util.TreeMap;
 
 public class Task2 {
     public static void main(String[] args) {
@@ -9,25 +8,31 @@ public class Task2 {
         System.out.println("Введите строку");
         String input = sc.nextLine();
         Task2 task2 = new Task2();
-        task2.MethodOfTree(input);
+        task2.MethodOfFindingTheSame(input);
         sc.close();
     }
 
-    public void MethodOfTree(String input) {
-        TreeMap<Character, Integer> resultList = new TreeMap();
-        int Count;
+    static final int MAX_CHAR = 256;
 
-        for(int i = 0; i < input.length(); ++i) {
-            if (resultList.containsKey(input.charAt(i))) {
-                 Count = (Integer)resultList.get(input.charAt(i)) + 1;
-                resultList.put(input.charAt(i), Count);
-            } else {
-                resultList.put(input.charAt(i), 1);
+    public int MethodOfFindingTheSame(String str) {
+        int[] counter = new int[MAX_CHAR];
+        int len = str.length();
+        for (int i = 0; i < len; i++)
+
+            counter[str.charAt(i)]++;
+
+        char[] chars = new char[str.length()];
+        for (int i = 0; i < len; i++) {
+            chars[i] = str.charAt(i);
+            int find = 0;
+            for (int j = 0; j <= i; j++) {
+                if (str.charAt(i) == chars[j])
+                    find++;
             }
+            if (find == 1)
+                System.out.println(str.charAt(i) + " = " + counter[str.charAt(i)]);
         }
-
-        System.out.println("Результат");
-        System.out.println(resultList);
+        return len;
     }
 }
 
