@@ -3,14 +3,15 @@ package Application;
 import Task1.Task1;
 import Task2.Task2Box;
 import Task3.Task3;
+import Task4.Task4;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("hw4");
+        System.out.println("hw6");
         System.out.println("Выбери нужое задание: ");
-        System.out.println("1 - Task1, 2 - Task2, 3 - Task3, 4 - Task4, 5 - Task5, 0 - exit");
+        System.out.println("1 - Task1, 2 - Task2, 3 - Task3, 4 - Task4, 0 - exit");
         boolean quit = false;
         Scanner sc = new Scanner(System.in);
         while (!quit) {
@@ -21,9 +22,10 @@ public class Main {
                 case "1" -> {
                     Task1 task1 = new Task1();
                     int i = 5;
-                    int MathPow = 2;
+                    int MathPow = -1;
                     String str = "Cat";
-                    System.out.println(Task1.MethodRecursion(i, MathPow));
+                    int result = task1.MethodRecursion(i, MathPow);
+                    System.out.println(result);
                     System.out.println(task1.MethodOfStringRecursion(str));
                 }
                 case "2" -> {
@@ -35,10 +37,10 @@ public class Main {
                     System.out.println(task3);
                 }
                 case "4" -> {
-
-                }
-                case "5" -> {
-
+                    int a = 9;
+                    int b = 3;
+                    Task4 task4 = new Task4();
+                    System.out.println(task4.MultRecursion(a, b));
                 }
                 case "6" -> quit = true;
             }
